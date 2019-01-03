@@ -1,6 +1,6 @@
 {
   "name": "rapid-bem",
-  "version": "0.1",
+  "version": "0.0.1",
   "homepage": "https://github.com/alexander-sk/rapid-bem",
   "description": "Frontend builder using the BEM methodology with support of redefinition levels, pug template engine and automatic markup-based dependency extraction.",
   "scripts": {
