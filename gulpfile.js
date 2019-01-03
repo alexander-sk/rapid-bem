@@ -383,7 +383,7 @@ gulp.task('browserSync', function() {
     },
     port: 8080,
     ui: false,
-    open: true,
+    open: 'local',
     notify: false,
     reloadOnRestart: true
   });
