@@ -1,8 +1,4 @@
 node_modules/
-build/
-src/blocks/*
-src/templates/*
-src/templates/static/*
-\!src/templates/static
+build/*
 npm-debug.log
 
