@@ -4,4 +4,5 @@ src/blocks/*
 src/templates/*
 src/templates/static/*
 \!src/templates/static
+npm-debug.log
 
