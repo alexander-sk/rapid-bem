@@ -1,0 +1,31 @@
+{
+  "name": "rapid-bem",
+  "version": "0.1",
+  "homepage": "https://github.com/alexander-sk/rapid-bem",
+  "description": "Frontend builder using the BEM methodology with support of redefinition levels, pug template engine and automatic markup-based dependency extraction.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "./node_modules/.bin/gulp",
+    "add": "node ./lib/bem-helper.js"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@bem/sdk.naming.cell.match": "^0.1.1",
+    "@bem/sdk.naming.entity.parse": "^0.2.8",
+    "@intervolga/bem-utils": "^1.0.2",
+    "copy": "^0.3.2",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-file": "^0.4.0",
+    "gulp-watch": "^5.0.1",
+    "mkdirp": "^0.5.1",
+    "pug-code-gen": "^2.0.1",
+    "pug-lexer": "^4.0.0",
+    "pug-linker": "^3.0.5",
+    "pug-load": "^2.0.11",
+    "pug-parser": "^5.0.0",
+    "pug-runtime": "^2.0.4",
+    "randomstring": "^1.1.5"
+  }
+}
