@@ -9,6 +9,8 @@ const
   copy = require('copy'),
   console = require('console'),
   gulpFile = require('gulp-file'),
+  browserSync = require('browser-sync'),
+  reload = browserSync.reload,
   BemTools = require('./lib/bem-tools'),
   config = require('./config'),
   bt = new BemTools(config),
@@ -37,23 +39,28 @@ const
   pipe = {
     js: function (fileName, src) {
       return gulpFile(fileName, src, { src: true })
-        .pipe(gulp.dest(path.build.js));
+        .pipe(gulp.dest(path.build.js))
+        .pipe(reload({stream:true}));
     },
     css: function (fileName, src) {
       return gulpFile(fileName, src, { src: true })
-        .pipe(gulp.dest(path.build.css));
+        .pipe(gulp.dest(path.build.css))
+        .pipe(reload({stream:true}));
     },
     templates: function (fileName, src) {
       return gulpFile(fileName, src, { src: true })
-        .pipe(gulp.dest(path.build.templates));
+        .pipe(gulp.dest(path.build.templates))
+        .pipe(reload({stream:true}));
     },
     img: function (fileName, src) {
       return gulpFile(fileName, src, { src: true })
-        .pipe(gulp.dest(path.build.img));
+        .pipe(gulp.dest(path.build.img))
+        .pipe(reload({stream:true}));
     },
     fonts: function (fileName, src) {
       return gulpFile(fileName, src, { src: true })
-        .pipe(gulp.dest(path.build.fonts));
+        .pipe(gulp.dest(path.build.fonts))
+        .pipe(reload({stream:true}));
     },
   },
 
@@ -369,4 +376,17 @@ gulp.task('watch', function () {
     });
 });
 
-gulp.task('default', gulp.series('build', 'watch'));
+gulp.task('browserSync', function() {
+  browserSync({
+    server: {
+      baseDir: path.build.templates
+    },
+    port: 8080,
+    ui: false,
+    open: true,
+    notify: false,
+    reloadOnRestart: true
+  });
+});
+
+gulp.task('default', gulp.series('build', gulp.parallel('watch', 'browserSync')));

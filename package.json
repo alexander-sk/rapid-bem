@@ -13,6 +13,7 @@
     "@bem/sdk.naming.cell.match": "^0.1.1",
     "@bem/sdk.naming.entity.parse": "^0.2.8",
     "@intervolga/bem-utils": "^1.0.2",
+    "browser-sync": "^2.26.3",
     "copy": "^0.3.2",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
