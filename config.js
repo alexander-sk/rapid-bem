@@ -2,7 +2,6 @@
 
 module.exports = {
   levels: [
-    'common.blocks',
     'src/blocks',
   ],
   isProduction: false,
