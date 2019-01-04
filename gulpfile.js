@@ -122,9 +122,24 @@ const
   entityFromPath = function(path) {
     const
       dirName = nodePath.dirname(path),
-      pathSegments = dirName.split(sep);
+      pathSegments = dirName.split(sep),
+      dir = pathSegments.pop();
+    let
+      entityParts = [];
 
-    return pathSegments[pathSegments.length - 2];
+    for(let i = pathSegments.length - 1; i > 0; i--) {
+      const 
+        segment = pathSegments[i];
+
+      entityParts.unshift(segment);
+
+      if(segment.includes('_') || segment.includes('__'))
+        continue;
+      else
+        break;
+    }
+
+    return entityParts.join('');
   };
 
 gulp.task('build', function (cb) {
