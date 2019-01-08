@@ -277,7 +277,7 @@ gulp.task('watch', function () {
 
         del.sync([path.build.js + '*']);
 
-        bt.buildBemEntityCss(entity);
+        bt.buildBemEntityJs(entity);
         jsBundle = bt.renderJs();
         for(let record in jsBundle) {
           pipe.js(
