@@ -46,6 +46,10 @@ $ npm run gulp
 
 ## <a name="usage">Использование</a>
 
+#### Демо
+***
+- [Static Demo](https://github.com/alexander-sk/rapid-bem-static-demo)
+
 #### Струтура проекта
 ***
 **src/templates:**
